@@ -1,0 +1,24 @@
+---
+export interface Props {
+    title?: string;
+    src: string;
+    href: string;
+    target?: string;
+}
+
+const { href, title, src, target } = Astro.props;
+---
+
+<a title={title || undefined} href={href} target={target || "_blank"}>
+    <img src={src} />
+</a>
+
+<style>
+    img {
+        @apply contrast-0;
+    }
+
+    img:hover {
+        @apply scale-105 contrast-[25%];
+    }
+</style>
