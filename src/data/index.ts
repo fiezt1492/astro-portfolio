@@ -7,22 +7,22 @@ export type Social = {
 const socials: Social[] = [
     {
         name: "GitHub",
-        icon: "/public/icons8-github.svg",
+        icon: "/icons8-github.svg",
         href: "https://github.com/fiezt1492"
     },
     {
         name: "LinkedIn",
-        icon: "/public/icons8-linkedin.svg",
+        icon: "/icons8-linkedin.svg",
         href: "https://www.linkedin.com/in/fiezt/"
     },
     {
         name: "Instagram",
-        icon: "/public/icons8-instagram.svg",
+        icon: "/icons8-instagram.svg",
         href: "https://instagram.com/fieztazica"
     },
     {
         name: "Discord",
-        icon: "/public/icons8-discord.svg",
+        icon: "/icons8-discord.svg",
         href: "https://discord.gg/F7ZK6ssMUm"
     },
 ]
