@@ -17,6 +17,9 @@ const { title } = Astro.props;
         <title>{title}</title>
     </head>
     <body>
+        <!-- <div class="wrapper">
+            <div class="slide"></div>
+        </div> -->
         <slot />
     </body>
 </html>
@@ -30,16 +33,22 @@ const { title } = Astro.props;
             white 60%
         );
     }
+
+    svg {
+        @apply fill-white;
+    }
+    path {
+  fill: none;
+  stroke: #646464;
+  stroke-width: 1px;
+  stroke-dasharray: 2,2;
+  stroke-linejoin: round;
+}
     html {
         font-family: system-ui, sans-serif;
         background-color: #333333;
-        /* overflow: hidden; */
-        background-image: url("/stacked-steps-haikei.png");
-        background-size: cover;
-        -webkit-background-size: cover;
-        -moz-background-size: cover;
-        -o-background-size: cover;
-        @apply bg-local hover:bg-fixed h-screen w-screen;
+        background-image: url("/bg.gif");
+        @apply h-screen w-screen bg-center bg-cover;
     }
     code {
         font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
@@ -47,6 +56,6 @@ const { title } = Astro.props;
     }
 
     body {
-        @apply h-full w-full;
+        @apply h-full w-full m-0 p-0;
     }
 </style>

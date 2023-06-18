@@ -10,15 +10,17 @@ const { href, title, src, target } = Astro.props;
 ---
 
 <a title={title || undefined} href={href} target={target || "_blank"}>
-    <img src={src} />
-</a>
+    <img title={title || undefined} src={src} /></a
+>
 
 <style>
     img {
-        @apply contrast-0;
+        @apply invert;
+        filter: drop-shadow(0 0 1px white), drop-shadow(0 0 4px white);
     }
 
     img:hover {
-        @apply scale-105 contrast-[25%];
+        @apply scale-105 contrast-[75%];
+        filter:  drop-shadow(0 0 2px white) drop-shadow(0 0 3px white) drop-shadow(0 0 4px white);
     }
 </style>
