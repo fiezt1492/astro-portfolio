@@ -9,18 +9,26 @@ export interface Props {
 const { href, title, src, target } = Astro.props;
 ---
 
-<a title={title || undefined} href={href} target={target || "_blank"}>
-    <img title={title || undefined} src={src} /></a
+<a
+    title={title || undefined}
+    href={href}
+    target={target || "_blank"}
+    class="group relative inline-block duration-300 md:p-6 p-4 items-center text-center justify-center"
 >
+    <img title={title || undefined} src={src} />
+    <span
+        class="absolute hidden group-hover:flex mx-auto left-0 right-0 top-2 -translate-y-full w-fit px-2 py-1 bg-indigo-700 rounded-md text-center text-white text-sm items-center justify-center md:text-sm sm:text-xs"
+        >{title || "Unknown"}</span
+    >
+</a>
 
 <style>
-    img {
+    a > img {
         @apply invert;
         filter: drop-shadow(0 0 1px white), drop-shadow(0 0 4px white);
     }
 
-    img:hover {
+    a > img:hover {
         @apply scale-105 contrast-[75%];
-        filter:  drop-shadow(0 0 2px white) drop-shadow(0 0 3px white) drop-shadow(0 0 4px white);
     }
 </style>

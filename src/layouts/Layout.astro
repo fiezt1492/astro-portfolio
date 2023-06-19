@@ -10,7 +10,7 @@ const { title } = Astro.props;
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
-        <meta name="description" content="Astro description" />
+        <meta name="description" content="I'm a SE student!" />
         <meta name="viewport" content="width=device-width" />
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <meta name="generator" content={Astro.generator} />
@@ -37,13 +37,6 @@ const { title } = Astro.props;
     svg {
         @apply fill-white;
     }
-    path {
-  fill: none;
-  stroke: #646464;
-  stroke-width: 1px;
-  stroke-dasharray: 2,2;
-  stroke-linejoin: round;
-}
     html {
         font-family: system-ui, sans-serif;
         background-color: #333333;
@@ -57,5 +50,11 @@ const { title } = Astro.props;
 
     body {
         @apply h-full w-full m-0 p-0;
+    }
+
+    p,span,a {
+        @apply text-white font-mono font-semibold text-xl;
+        text-shadow: 2px 0 #000, -2px 0 #000, 0 2px #000, 0 -2px #000,
+             1px 1px #000, -1px -1px #000, 1px -1px #000, -1px 1px #000;
     }
 </style>

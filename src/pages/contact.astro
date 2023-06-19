@@ -1,36 +1,54 @@
 ---
+import Tooltip from "../components/Tooltip.astro";
 import Layout from "../layouts/Layout.astro";
+import { Icon } from "astro-icon";
 
 const emails = ["tiendat.dev@outlook.com", "fiezt@outlook.com", "fiezt@pm.me"];
 ---
 
-<Layout title="Welcome to Astro">
+<Layout title="Connect with Fiezt">
     <main class="h-full static w-full">
         <div
-            class="absolute top-0 inset-x-0 flex justify-center items-center py-4"
+            class="absolute top-0 inset-x-0 flex justify-center items-center py-8"
         >
-            <a href="/" title="Back">
-                <img class="invert" src="/icons8-back-50.png" />
-            </a>
+            <Tooltip label="Back">
+                <a href="/" title="Back">
+                    <Icon
+                        class="w-full h-20 fill-white stroke-white"
+                        name="ic:round-keyboard-backspace"
+                    />
+                </a>
+            </Tooltip>
         </div>
         <div
-            class="container mx-auto items-center justify-center flex flex-col h-full"
+            class="container mx-auto items-center justify-center flex flex-col space-y-2 h-full"
         >
             {
                 emails.map((v) => (
-                    <a href={`mailto:${v}`}>
-                        <p>{v}</p>
-                    </a>
+                    <div class="flex flex-row items-center justify-center space-x-2">
+                        <a href={`mailto:${v}`} class="hover:underline">
+                            <p>{v}</p>
+                        </a>
+                        <div
+                            class="p-1 rounded-md bg-indigo-400 cursor-pointer"
+                            title="Copy"
+                            onclick={`copy("${v}")`}
+                        >
+                            <Icon
+                                class="w-6 fill-white stroke-white stroke-2"
+                                name="ph:copy"
+                            />
+                        </div>
+                    </div>
                 ))
             }
         </div>
     </main>
 </Layout>
-
-<style>
-    p {
-        @apply text-white font-mono font-semibold text-xl;
-        text-shadow: 2px 0 #000, -2px 0 #000, 0 2px #000, 0 -2px #000,
-             1px 1px #000, -1px -1px #000, 1px -1px #000, -1px 1px #000;
+<script is:inline>
+    function copy(text) {
+        navigator.clipboard.writeText(text);
+        alert("Copied");
     }
-</style>
+</script>
+<style></style>
