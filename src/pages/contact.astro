@@ -14,7 +14,7 @@ const emails = ["tiendat.dev@outlook.com", "fiezt@outlook.com", "fiezt@pm.me"];
             <Tooltip label="Back">
                 <a href="/" title="Back">
                     <Icon
-                        class="w-full h-20 fill-white stroke-white"
+                        class="w-full h-20 fill-white stroke-black"
                         name="ic:round-keyboard-backspace"
                     />
                 </a>
@@ -48,6 +48,8 @@ const emails = ["tiendat.dev@outlook.com", "fiezt@outlook.com", "fiezt@pm.me"];
 <script is:inline>
     function copy(text) {
         navigator.clipboard.writeText(text);
+
+        // Alert the copied text
         alert("Copied");
     }
 </script>
