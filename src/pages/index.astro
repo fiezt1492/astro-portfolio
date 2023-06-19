@@ -8,24 +8,20 @@ import Tooltip from "../components/Tooltip.astro";
 
 <Layout title="It's Fiezt here!">
     <main class="h-full static w-full">
-        <audio
-            id="loop"
-            src="/8bit-theme-song.mp3"
-            hidden
-            preload="auto"
-            loop></audio>
+        <audio id="loop" src="/8bit-theme-song.mp3" hidden preload="auto" loop
+        ></audio>
         <div
             class="container mx-auto h-full items-center justify-center flex flex-col"
         >
             <div class="flex flex-row">
-                    <Tooltip id="name-tooltip" label={`Turn music off`}>
-                        <img id="name" src="/bumping.gif" />
-                    </Tooltip>
+                <Tooltip id="name-tooltip" label={`Turn music off`}>
+                    <img id="name" src="/bumping.gif" />
+                </Tooltip>
             </div>
         </div>
 
         <div
-            class="absolute bottom-0 inset-x-0 py-4 flex flex-row  justify-center items-center"
+            class="absolute bottom-0 inset-x-0 py-4 flex flex-row justify-center items-center"
         >
             {
                 socials.map((v) => (
@@ -48,21 +44,23 @@ import Tooltip from "../components/Tooltip.astro";
     var nameTooltip = document.getElementById("name-tooltip") as HTMLDivElement;
     var nameTooltipLabel = nameTooltip.querySelector("span") as HTMLSpanElement;
 
+    sample.addEventListener("canplay", () => {
+        sample.volume = 0.1;
+        sample.play();
+    });
+
     sample.addEventListener("play", () => {
-         nameTooltipLabel.textContent = "Turn music off";
-    })
+        nameTooltipLabel.textContent = "Turn music off";
+    });
 
     sample.addEventListener("pause", () => {
-         nameTooltipLabel.textContent = "Turn music on"
-    })
+        nameTooltipLabel.textContent = "Turn music on";
+    });
 
     name.addEventListener("click", () => {
         if (sample.paused) sample.play();
         else sample.pause();
     });
-
-    sample.volume = 0.1;
-    sample.play();
 </script>
 
 <style>
