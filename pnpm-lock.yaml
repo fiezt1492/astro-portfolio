@@ -14,6 +14,9 @@ dependencies:
   astro-icon:
     specifier: ^0.8.1
     version: 0.8.1
+  astro-seo:
+    specifier: ^0.7.4
+    version: 0.7.4
   tailwindcss:
     specifier: ^3.0.24
     version: 3.3.2
@@ -828,6 +831,10 @@ packages:
       node-fetch: 3.3.1
       resolve-pkg: 2.0.0
       svgo: 2.8.0
+    dev: false
+
+  /astro-seo@0.7.4:
+    resolution: {integrity: sha512-E+wJmxOnvBRjgzVctdGk/VdwoEqeQ6Q/KgVW2wRBXZWJVDgOweB32Da/UiH0/FpGncPzo2daOrc08DNn5wTanw==}
     dev: false
 
   /astro@2.6.4:
